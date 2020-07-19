@@ -2,16 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/MenuComponent'; 
-import './App.css';
 import { DISHES } from './shared/dishes'; 
+import DishDetail from "./DishdetailComponent"; 
 
-class App extends Component { 
+
+class Main extends Component { 
 	constructor(props) {
 		super(props); 
 		this.state = { 
-			dishes: DISHES 
+			dishes: DISHES, 
+      selectedDish: null 
 		}; 
 	}  
+
+  onDishSelect(dish) { 
+    this.setState({ selectedDish: dish});
+  }
+
 
   render () {
   	return (
@@ -22,6 +29,7 @@ class App extends Component {
             </div>
         </Navbar>
         <Menu dishes={this.state.dishes} />
+        <DishDetail dish={} />
       </div>
     );
   }
