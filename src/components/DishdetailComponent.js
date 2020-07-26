@@ -26,47 +26,51 @@ import { Link } from 'react-router-dom';
 	}
 
 
- // 	function RenderComments(comments) { 
- // 
- // 		const commentary = comments.map((comment) => { 
- // 			return(
- // 				<div key={comment.id}> 
- // 					
- // 					<ul className="list-unstyled">
- // 						<li> {comment.comment} </li>
- // 						<br />
- // 						<li> -- {comment.author}, 
- // 						{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))} </li>
- // 					</ul>
- // 				</div>
- // 				); 
- // 		})
- // 
- // 		return(<div>{commentary} 
- // 			</div> ); 
- // 
- // 	}
+//   	function RenderComments({comments}) { 
+//   
+//   		console.log("Comments passed are: " + comments.comment); 
+//   		const commentary = comments.map((comment) => { 
+//   			return(
+//   				<div key={comment.id}> 
+//   					
+//   					<ul className="list-unstyled">
+//   						<li> {comment.comment} </li>
+//   						<br />
+//   						<li> -- {comment.author}, 
+//   						{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))} </li>
+//   					</ul>
+//   				</div>
+//   				); 
+//   		})
+//   
+//   		return(<div>
+//   			{commentary} 
+//   			</div> ); 
+// 
+//   
+//   	}
 
-
- 	function RenderComments({comments}) { 
-
- 		console.log("Comments passed are: " + comments.comment); 
- 			return(
- 				<div key={comments.id}> 
- 					<ul className="list-unstyled">
- 						<li> {comments.comment} </li>
- 						<br />
- 						<li> -- {comments.author}, 
- 						{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))} </li>
- 					</ul>
- 				</div>
- 				); 
-  	}
+  	function RenderComments({comments}) { 
+ 
+  		console.log("Comments passed are: " + comments.comment); 
+  			return(
+  				<div key={comments.id}> 
+  					<ul className="list-unstyled">
+  						<li> {comments.comment} </li>
+  						<br />
+  						<li> -- {comments.author}, 
+  						{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))} </li>
+  					</ul>
+  				</div>
+  				); 
+   	}
 
 
 
 
 	const DishDetail = (props) => {
+
+		console.log("Props comments: " + props.comments.dishId);
 	
 		if (props.dish != null) {	
 			return (	
